@@ -1,114 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>SOLINDPROF SRL | Ingeniería y Arquitectura</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLINDPROF SRL | Ingeniería y Arquitectura</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#121a24;
+      --txt:#e8eef7;
+      --muted:#a8b3c2;
+      --accent:#19c37d;
+      --line: rgba(255,255,255,.10);
+    }
 
-        body {
-            background-color: #f4f6f8;
-            color: #1f2937;
-        }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--txt);
+      background:linear-gradient(180deg,#070a0f, var(--bg));
+    }
 
-        /* ===== HEADER / HERO ===== */
-        .hero {
-            position: relative;
-            height: 80vh;
-            background-image: url("estructura metalica.jpg");
-            background-size: cover;
-            background-position: center;
-        }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1120px; margin:0 auto; padding:0 18px}
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-        }
+    /* HEADER / HERO */
+    header{
+      position:relative;
+      min-height: 62vh;
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
+      background:#000;
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background-image:url("img/encabezado-1.jpg");
+      background-size:cover;
+      background-position:center;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .hero-overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.40) 55%, rgba(0,0,0,.10) 100%),
+                  linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.65) 100%);
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            color: #ffffff;
-        }
+    /* LOGO arriba a la derecha */
+    .topbar{
+      position:relative;
+      display:flex;
+      justify-content:flex-end;
+      align-items:flex-start;
+      padding:16px 0;
+      z-index:2;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+    }
+    .logo img{
+      height:54px; /* visible */
+      width:auto;
+      display:block;
+    }
+    .logo .brand{
+      line-height:1.05;
+      font-weight:800;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      font-size: 14px;
+    }
+    .logo .sub{
+      display:block;
+      font-weight:600;
+      font-size: 12px;
+      color:var(--muted);
+      text-transform:none;
+      letter-spacing:0;
+      margin-top:4px;
+    }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .hero-content p {
-            max-width: 900px;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        /* ===== LOGO ===== */
-        .logo {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            z-index: 3;
-        }
-
-        .logo img {
-            height: 80px;
-            width: auto;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .hero {
-                height: 70vh;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .logo img {
-                height: 60px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <header class="hero">
-        <div class="logo">
-            <img src="Logo.jpeg" alt="Logo SOLINDPROF SRL">
-        </div>
-
-        <div class="hero-content">
-            <h1>SOLINDPROF SRL</h1>
-            <p>
-                Empresa de Ingeniería y Arquitectura especializada en proyectos,
-                ejecución de obras y mantenimiento integral.
-            </p>
-        </div>
-    </header>
-
-</body>
-</html>
-
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding: 28px 0 46px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:end;
+      min-height: calc(62vh - 70px);
+    }
+    .hero-title{
+      margin:0 0 10px;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 900;
+      letter-spacing:.2px;
+    }
+    .hero-p{
+      margin:0;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .hero-cta{
+      display:flex;
+      gap:12px;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--txt);
+      font-weight: 700;
+      transition:.2s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.primary{
+      border-color: rgba(25,195,125,.55);
+      background: rgba(25,195,125,.12);
+    }
+    .kpi{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding:16px;
+    }
+    .kpi h3{margin:0 0 6px
