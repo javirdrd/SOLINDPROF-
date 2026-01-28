@@ -8,7 +8,6 @@
   <style>
     :root{
       --bg:#0b0f14;
-      --card:#121a24;
       --txt:#e8eef7;
       --muted:#a8b3c2;
       --accent:#19c37d;
@@ -68,7 +67,7 @@
       border-radius: 14px;
     }
     .logo img{
-      height:54px; /* visible */
+      height:54px;
       width:auto;
       display:block;
     }
@@ -143,4 +142,447 @@
       border-radius: 18px;
       padding:16px;
     }
-    .kpi h3{margin:0 0 6px
+    .kpi h3{margin:0 0 6px; font-size:14px; color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:.6px}
+    .kpi p{margin:0; font-size:14px; line-height:1.45; color:var(--txt)}
+
+    /* SECCIONES / CARDS */
+    section{padding: 44px 0}
+    .section-title{
+      margin:0 0 14px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing:.2px;
+    }
+    .section-sub{
+      margin:0 0 26px;
+      color:var(--muted);
+      line-height:1.55;
+      max-width: 72ch;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:16px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      overflow:hidden;
+      transition:.2s ease;
+      min-height: 340px;
+      display:flex;
+      flex-direction:column;
+    }
+    .card:hover{transform: translateY(-2px); border-color: rgba(25,195,125,.35)}
+    .card .img{
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .card .body{padding:14px 14px 16px; display:flex; flex-direction:column; gap:8px}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      width:max-content;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      border:1px solid rgba(25,195,125,.5);
+      background: rgba(25,195,125,.10);
+    }
+    .card h4{margin:2px 0 0; font-size:16px; font-weight:900}
+    .card p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+    .card ul{margin:6px 0 0; padding-left:16px; color:var(--muted); font-size:13px; line-height:1.5}
+    .card .footer{margin-top:auto; padding:0 14px 14px}
+    .mini-btn{
+      display:inline-flex;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-weight:800;
+      font-size:13px;
+    }
+
+    /* REFORMAS: doble imagen */
+    .img-split{
+      display:flex;
+      gap:4px;
+      padding:4px;
+      height:150px;
+      background: rgba(0,0,0,.15);
+    }
+    .img-split .half{
+      flex:1;
+      background-size:cover;
+      background-position:center;
+      border-radius:12px;
+    }
+
+    /* CONTACTO */
+    .contact{
+      background: rgba(255,255,255,.03);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    form{
+      background: rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding:16px;
+    }
+    label{display:block; font-size:12px; font-weight:800; color:var(--muted); margin:10px 0 6px; letter-spacing:.4px; text-transform:uppercase}
+    input, textarea{
+      width:100%;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color:var(--txt);
+      padding: 12px 12px;
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    .form-actions{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
+    .small{font-size:13px; color:var(--muted); line-height:1.5}
+
+    /* ICONOS REDES (visibles) */
+    .social-icons{
+      display:flex;
+      gap:14px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.15);
+      transition:.25s ease;
+    }
+    .icon svg{
+      width:30px; height:30px;
+      display:block;
+    }
+    .icon:hover{
+      transform: translateY(-3px) scale(1.04);
+      background: rgba(25,195,125,.15);
+      border-color: rgba(25,195,125,.6);
+    }
+
+    /* FOOTER VISUAL FUSIONADO */
+    .footer-visual{
+      width:100%;
+      margin-top:40px;
+      padding:0;
+    }
+    .footer-img{
+      width:100%;
+      height:320px;
+      background-image:url('img/footer-fusion.jpg');
+      background-size:cover;
+      background-position:center;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+
+    footer{
+      padding: 22px 0;
+      color:var(--muted);
+      font-size: 13px;
+      border-top:1px solid var(--line);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .cards{grid-template-columns: repeat(2, 1fr)}
+      .contact-grid{grid-template-columns: 1fr}
+      .logo img{height:48px}
+    }
+    @media (max-width: 560px){
+      .cards{grid-template-columns: 1fr}
+      .form-row{grid-template-columns: 1fr}
+      .footer-img{height:220px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="wrap">
+      <div class="topbar">
+        <div class="logo" aria-label="SOLINDPROF SRL">
+          <img src="img/logo-solindprof.png" alt="Logo SOLINDPROF SRL">
+          <div class="brand">
+            SOLINDPROF SRL
+            <span class="sub">Ingeniería & Arquitectura</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-grid">
+          <div>
+            <h1 class="hero-title">Proyectos y obras con ejecución profesional</h1>
+            <p class="hero-p">
+              SOLINDPROF SRL desarrolla soluciones de <b>ingeniería</b> y <b>arquitectura</b> con foco en calidad,
+              plazos y seguridad. Trabajamos en estructuras metálicas, reformas y mantenimiento.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn primary" href="#contacto">Pedir presupuesto</a>
+              <a class="btn" href="#servicios">Ver servicios</a>
+            </div>
+          </div>
+
+          <div class="kpi">
+            <h3>Qué hacemos</h3>
+            <p>✔ Proyecto + ejecución<br>
+               ✔ Dirección y supervisión<br>
+               ✔ Calidad y cumplimiento<br>
+               ✔ Atención personalizada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="wrap">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-sub">
+        Áreas principales de SOLINDPROF SRL. Mostramos el trabajo real, el proceso y la terminación.
+      </p>
+
+      <div class="cards">
+
+        <!-- 1) INGENIERIA -->
+        <article class="card">
+          <div class="img" style="background-image:url('img/ingenieria.jpg');"></div>
+          <div class="body">
+            <span class="badge">Ingeniería</span>
+            <h4>Proyecto y ejecución</h4>
+            <p>Estructuras metálicas, cálculo, documentación técnica y dirección de obra con foco en seguridad y plazos.</p>
+            <ul>
+              <li>Estructuras metálicas</li>
+              <li>Documentación y cómputos</li>
+              <li>Dirección / inspección</li>
+            </ul>
+          </div>
+          <div class="footer">
+            <a class="mini-btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+
+        <!-- 2) ARQUITECTURA -->
+        <article class="card">
+          <div class="img" style="background-image:url('img/arquitectura.jpg');"></div>
+          <div class="body">
+            <span class="badge">Arquitectura</span>
+            <h4>Diseño y planificación</h4>
+            <p>Anteproyecto, proyecto ejecutivo y coordinación integral para obras eficientes y bien resueltas.</p>
+            <ul>
+              <li>Proyecto arquitectónico</li>
+              <li>Planificación de obra</li>
+              <li>Optimización de espacios</li>
+            </ul>
+          </div>
+          <div class="footer">
+            <a class="mini-btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+
+        <!-- 3) OBRAS Y MANTENIMIENTO -->
+        <article class="card">
+          <div class="img" style="background-image:url('img/obras-mantenimiento.jpg');"></div>
+          <div class="body">
+            <span class="badge">Obras</span>
+            <h4>Mantenimiento y obras nuevas</h4>
+            <p>Intervenciones planificadas, mantenimiento industrial y obras con gestión completa.</p>
+            <ul>
+              <li>Mantenimiento eléctrico</li>
+              <li>Instalaciones sanitarias</li>
+              <li>Obras civiles</li>
+            </ul>
+          </div>
+          <div class="footer">
+            <a class="mini-btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+
+        <!-- 4) REFORMAS -->
+        <article class="card">
+          <div class="img img-split">
+            <div class="half" style="background-image:url('img/reformas-bano.jpg');"></div>
+            <div class="half" style="background-image:url('img/reformas-cocina.jpg');"></div>
+          </div>
+          <div class="body">
+            <span class="badge">Reformas</span>
+            <h4>Cocinas y baños en obra</h4>
+            <p>Reformas integrales con seguimiento técnico, ejecución prolija y control de cada etapa del proceso.</p>
+            <ul>
+              <li>Baños en construcción</li>
+              <li>Cocinas en reforma</li>
+              <li>Gestión completa de obra</li>
+            </ul>
+          </div>
+          <div class="footer">
+            <a class="mini-btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-sub">
+        Escribinos y te respondemos a la brevedad. También podés contactarnos por WhatsApp o Instagram.
+      </p>
+
+      <div class="contact-grid">
+
+        <div>
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" type="tel" placeholder="Ej: +54 11 1234-5678" />
+              </div>
+            </div>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="tuemail@dominio.com" />
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Contanos qué necesitás..."></textarea>
+
+            <div class="form-actions">
+              <a class="btn primary" id="btnMail" href="#">Enviar por email</a>
+              <a class="btn" id="btnWhats" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            </div>
+
+            <p class="small" style="margin-top:10px;">
+              *El formulario genera un email o WhatsApp con tu mensaje. No guarda datos en servidor.
+            </p>
+          </form>
+        </div>
+
+        <div>
+          <div class="kpi">
+            <h3>Mail</h3>
+            <p>
+              <a href="mailto:contacto@solindprof.com">contacto@solindprof.com</a>
+            </p>
+
+            <h3 style="margin-top:14px;">Redes</h3>
+
+            <!-- ICONOS VISIBLES -->
+            <div class="social-icons">
+              <!-- WhatsApp -->
+              <a class="icon" href="https://wa.me/5491112345678" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="currentColor" d="M19.11 17.56c-.28-.14-1.64-.81-1.9-.9-.26-.1-.45-.14-.64.14-.18.28-.73.9-.9 1.09-.16.18-.33.21-.61.07-.28-.14-1.17-.43-2.24-1.38-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.12-.12.28-.33.43-.5.14-.16.18-.28.28-.47.1-.18.05-.35-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.18 0-.5.07-.76.35-.26.28-1 1-1 2.45 0 1.45 1.02 2.85 1.16 3.05.14.18 2 3.05 4.85 4.28.68.29 1.21.46 1.62.59.68.22 1.29.19 1.78.12.54-.08 1.64-.67 1.88-1.31.23-.64.23-1.19.16-1.31-.07-.12-.26-.19-.54-.33z"/>
+                  <path fill="currentColor" d="M16.02 3C8.85 3 3.02 8.83 3.02 16c0 2.29.6 4.52 1.74 6.49L3 29l6.72-1.73a12.93 12.93 0 0 0 6.3 1.62h.01c7.17 0 13-5.83 13-13S23.2 3 16.02 3zm0 23.68h-.01c-2.02 0-4-.53-5.75-1.54l-.41-.24-3.99 1.03 1.06-3.89-.27-.4A10.69 10.69 0 0 1 5.33 16c0-5.9 4.8-10.69 10.7-10.69 5.9 0 10.7 4.8 10.7 10.69 0 5.9-4.8 10.69-10.7 10.69z"/>
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a class="icon" href="https://instagram.com/solindprof" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2zM17.8 6.6a.9.9 0 1 1-.9-.9.9.9 0 0 1 .9.9z"/>
+                </svg>
+              </a>
+            </div>
+
+            <p class="small" style="margin-top:14px;">
+              *Reemplazamos el mail, el número de WhatsApp y el usuario de Instagram por los reales cuando quieras.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER VISUAL FUSIONADO -->
+  <section class="footer-visual">
+    <div class="footer-img" aria-label="Proceso: estructura, ingeniería y obra terminada"></div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> SOLINDPROF SRL — Ingeniería & Arquitectura. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // CONFIG: cambialo por tus datos reales
+    const EMAIL_DESTINO = "contacto@solindprof.com";
+    const WHATSAPP_NUMERO = "5491112345678"; // formato internacional sin + ni 0
+
+    function armarMensaje(){
+      const nombre = document.getElementById("nombre").value.trim();
+      const tel = document.getElementById("telefono").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const msg = document.getElementById("mensaje").value.trim();
+
+      const cuerpo =
+`Hola, soy ${nombre || "[Nombre]"}.
+Teléfono: ${tel || "[Teléfono]"}
+Email: ${email || "[Email]"}
+
+Mensaje:
+${msg || "[Escribí tu consulta]"}
+`;
+      return cuerpo;
+    }
+
+    // Email (mailto)
+    document.getElementById("btnMail").addEventListener("click", () => {
+      const subject = encodeURIComponent("Consulta desde la web - SOLINDPROF SRL");
+      const body = encodeURIComponent(armarMensaje());
+      window.location.href = `mailto:${EMAIL_DESTINO}?subject=${subject}&body=${body}`;
+    });
+
+    // WhatsApp (botón del formulario)
+    document.getElementById("btnWhats").addEventListener("click", (e) => {
+      const text = encodeURIComponent(armarMensaje());
+      e.currentTarget.href = `https://wa.me/${WHATSAPP_NUMERO}?text=${text}`;
+    });
+  </script>
+
+</body>
+</html>
