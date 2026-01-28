@@ -1,84 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Solindprof SRL | Ingeniería y Arquitectura</title>
+  <title>SOLINDPROF SRL | Ingeniería y Arquitectura</title>
 
-  <meta name="description" content="Solindprof SRL - Empresa de Ingeniería y Arquitectura. Obras civiles, industriales y mantenimiento." />
+  <meta name="description" content="SOLINDPROF SRL. Ingeniería, Arquitectura, Mantenimiento industrial y soluciones integrales.">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #f9fafb;
-      line-height: 1.6;
       color: #1f2933;
+      line-height: 1.6;
     }
 
+    /* ---------- HEADER ---------- */
     header {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      position: relative;
+      background: url('hero.jpg') center/cover no-repeat;
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    header .contenido {
+      position: relative;
+      max-width: 1100px;
+      margin: auto;
       text-align: center;
     }
 
+    header img {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+
     header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+      margin: 10px 0;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
     }
 
     header p {
-      margin-top: 15px;
       font-size: 1.1rem;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
     }
 
-    .imagen-principal {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .imagen-principal img {
-      width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
+    /* ---------- SECCIONES ---------- */
     section {
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: 60px auto;
       padding: 0 20px;
+    }
+
+    .bloques {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .bloque {
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .bloque:hover {
+      transform: translateY(-4px);
+    }
+
+    .bloque img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .bloque .texto {
+      padding: 20px;
+    }
+
+    .bloque h3 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    /* ---------- CONTACTO ---------- */
+    .contacto {
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 40px;
+    }
+
+    .contacto h2 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    .contacto form {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contacto input,
+    .contacto textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+    }
+
+    .contacto textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contacto button {
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contacto button:hover {
+      background: #0f172a;
+    }
+
+    .datos-contacto {
+      margin-top: 30px;
+    }
+
+    .redes {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .redes img {
+      width: 36px;
+      height: 36px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ENCABEZADO -->
   <header>
-    <h1>Solindprof SRL</h1>
-    <p>
-      Empresa de Ingeniería y Arquitectura especializada en obras civiles,
-      industriales y mantenimiento integral.
-    </p>
+    <div class="contenido">
+      <img src="logo.png" alt="Logo SOLINDPROF SRL">
+      <h1>SOLINDPROF SRL</h1>
+      <p>
+        Empresa de Ingeniería y Arquitectura especializada en proyectos,
+        ejecución de obras y mantenimiento integral.
+      </p>
+    </div>
   </header>
 
-  <div class="imagen-principal">
-    <img src="estudio.png" alt="Proyecto de ingeniería en ejecución">
-  </div>
-
+  <!-- BLOQUES -->
   <section>
-    <h2>Qué hacemos</h2>
-    <p>
-      Brindamos soluciones técnicas integrales en ingeniería y arquitectura,
-      combinando experiencia profesional, planificación rigurosa y ejecución
-      responsable en cada proyecto.
-    </p>
+    <div class="bloques">
+
+      <div class="bloque">
+        <img src="ingenieria.jpg" alt="Ingeniería estructural">
+        <div class="texto">
+          <h3>Ingeniería</h3>
+          <p>
+            Proyecto y ejecución de estructuras metálicas.
+            Soluciones técnicas eficientes y seguras.
+          </p>
+        </div>
+      </div>
+
+      <div class="bloque">
+        <img src="arquitectura.jpg" alt="Arquitectura y construcción">
+        <div class="texto">
+          <h3>Arquitectura</h3>
+          <p>
+            Construcción convencional, steel frame
+            y sistemas de construcción en seco.
+          </p>
+        </div>
+      </div>
+
+      <div class="bloque">
+        <img src="mantenimiento.jpg" alt="Mantenimiento">
+        <div class="texto">
+          <h3>Mantenimiento Industrial y Hogar</h3>
+          <p>
+            Electricidad, plomería, refacciones
+            y mantenimiento general.
+          </p>
+        </div>
+      </div>
+
+      <div class="bloque">
+        <img src="profesionalismo.jpg" alt="Profesionalismo">
+        <div class="texto">
+          <h3>Seriedad y Profesionalismo</h3>
+          <p>
+            Compromiso, planificación y cumplimiento
+            en cada proyecto.
+          </p>
+        </div>
+      </div>
+
+    </div>
   </section>
+
+  <!-- CONTACTO -->
+  <section>
+    <div class="contacto">
+      <h2>Contacto</h2>
+
+      <form>
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea placeholder="Mensaje"></textarea>
+        <button type="submit">Enviar consulta</button>
+      </form>
+
+      <div class="datos-contacto">
+        <p><strong>Email:</strong> contacto@solindprof.com</p>
+
+        <div class="redes">
+          <a href="https://wa.me/549XXXXXXXXXX" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
+          </a>
+
+          <a href="https://www.instagram.com/solindprof" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© SOLINDPROF SRL – Ingeniería y Arquitectura</p>
+  </footer>
 
 </body>
 </html>
+
